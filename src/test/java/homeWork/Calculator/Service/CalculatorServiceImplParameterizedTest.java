@@ -36,27 +36,26 @@ class CalculatorServiceImplParameterizedTest {
     }
     @ParameterizedTest
     @MethodSource("dataForDivide")
-    void divide__returnDouble(int num1, int num2, double expectedResult) {
+    void divide_num1DivisibleNum2Divider_returnDouble(int num1, int num2, double expectedResult) {
         var result = underTest2.divide(num1, num2);
         assertEquals(expectedResult, result);
     }
     @ParameterizedTest
     @MethodSource("dataForMultiply")
-    void multiply__returnInt(int num1, int num2, int expectedResult) {
+    void multiply_num1AndNum2_returnProduct(int num1, int num2, int expectedResult) {
         var result = underTest2.multiply(num1, num2);
         assertEquals(expectedResult, result);
     }
     @ParameterizedTest
-    @MethodSource("dataForMinus")
-    void minus__returnValue(int num1, int num2, int expectedResult) {
-        var result = underTest2.minus(num1, num2);
-        assertEquals(expectedResult, result);
-    }
-    @ParameterizedTest
     @MethodSource("dataForPlus")
-    void plus__returnValue(int num1, int num2, int expectedResult) {
+    void plus_num1AndNum2_returnPositive(int num1, int num2, int expectedResult) {
         var result = underTest2.plus(num1, num2);
         assertEquals(expectedResult, result);
     }
-
+    @ParameterizedTest
+    @MethodSource("dataForMinus")
+    void minus_num1MinusNum2_returnNegative(int num1, int num2, int expectedResult) {
+        var result = underTest2.minus(num1, num2);
+        assertEquals(expectedResult, result);
+    }
 }
