@@ -19,39 +19,39 @@ class CalculatorServiceImplTest {
         assertEquals(8,result);
     }
     @Test
-    void plus_num1AndNum2_resultNegative() {
+    void plus_NegativeAndBiggerInModulus_resultNegative() {
         int result = underTest.plus(-5,4);
         assertEquals(-1,result);
     }
     @Test
-    void minus_num1MinusNum2_resultPositive() {
+    void minus_num1PositiveMinusNum2Positive_resultPositive() {
         int result = underTest.minus(4,4);
         assertEquals(0,result);
     }
     @Test
-    void minus_num1LessThenNum2_resultNegative() {
+    void minus_num1PositiveLessThenNum2Positive_resultNegative() {
         int result = underTest.minus(5,10);
         assertEquals(-5,result);
     }
 
     @Test
-    void multiply_num1MultiplierNum2_resultPositive() {
+    void multiply_num1PositiveMultiplierNum2Positive_resultPositive() {
         int result = underTest.multiply(5,5);
         assertEquals(25,result);
     }
     @Test
-    void multiply_num1NegativeMultiplierNum2_resultNegativeProduct() {
+    void multiply_num1PositiveAndNum2Negative_resultNegativeProduct() {
         int result = underTest.multiply(5,-5);
         assertEquals(-25,result);
     }
 
     @Test
-    void divide_num1DividedNum2WithoutFraction_resultFraction() {
+    void divide_num1PositiveWithoutFractionAndNum2PositiveWithoutFraction_resultPositiveFraction() {
         double result = underTest.divide(4,2);
         assertEquals(2, result);
     }
     @Test
-    void divide_num1DividedNum2WithFraction_resultFraction() {
+    void divide_num1PositiveAndNum2Positive_resultPositiveWithFraction() {
         double result = underTest.divide(7,2);
         assertEquals(3.5, result);
     }
